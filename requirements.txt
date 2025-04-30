@@ -2,3 +2,4 @@ fastapi
 uvicorn 
 streamlit
 watchdog
+python-dotenv
