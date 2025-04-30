@@ -13,8 +13,11 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+etc/
+share/
 .eggs/
 lib/
+bin/
 lib64/
 parts/
 sdist/
