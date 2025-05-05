@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
+from prompt import PromptRequest
 
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -15,7 +16,7 @@ app = FastAPI()
 def read_root():
     return {"message": "Welcome to CustomFit API!"}
 
-@app.get("/ask")
-def ask_ai(prompt: str):
-  response = model.generate_content(prompt)
+@app.post("/ask")
+def ask_ai(data: PromptRequest):
+  response = model.generate_content(data.prompt)
   return {"response": response.text}
