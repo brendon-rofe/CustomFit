@@ -18,5 +18,7 @@ def read_root():
 
 @app.post("/ask")
 def ask_ai(data: PromptRequest):
+  data.prompt += " If what I have just said is not health and fitness related, please respond by saing 'I am sorry, but can you please stick to health and fitness questions.'"
+  print(data.prompt)
   response = model.generate_content(data.prompt)
   return {"response": response.text}
