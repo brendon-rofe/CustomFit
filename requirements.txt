@@ -2,3 +2,6 @@ fastapi
 uvicorn 
 streamlit
 watchdog
+python-dotenv
+google-generativeai
+requests
