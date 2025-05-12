@@ -18,6 +18,8 @@ share/
 .eggs/
 lib/
 bin/
+Scripts/
+pyvenv.cfg
 lib64/
 parts/
 sdist/
