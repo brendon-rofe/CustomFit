@@ -3,8 +3,8 @@ import streamlit as st
 correct_username = "Brendon"
 correct_password = "pass123"
 
-if "login_status" not in st.session_state:
-  st.session_state.login_status = None
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
 
 def login():
 
@@ -14,11 +14,11 @@ def login():
 	password = st.text_input("Password")
 
 	if st.button("Log in") and username == correct_username and password == correct_password:
-		st.session_state.login_status = "Logged In"
+		st.session_state.logged_in = True
 		st.rerun()
 
 def logout():
-    st.session_state.login_status = None
+    st.session_state.logged_in = False
     st.rerun()
 
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
@@ -27,7 +27,7 @@ settings = st.Page("app_pages/settings.py", icon=":material/settings:")
 
 pages = [ask_fitGPT, settings, logout_page]
 
-if st.session_state.login_status == "Logged In":
+if st.session_state.logged_in == True:
   pg = st.navigation(pages)
 else:
   pg = st.navigation([st.Page(login)]) 
