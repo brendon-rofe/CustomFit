@@ -17,10 +17,15 @@ def login():
 		st.session_state.login_status = "Logged In"
 		st.rerun()
 
+def logout():
+    st.session_state.login_status = None
+    st.rerun()
+
+logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 ask_fitGPT = st.Page("app_pages/ask_fitGPT.py", title="Ask FitGPT", icon=":material/help:")
 settings = st.Page("app_pages/settings.py", icon=":material/settings:")
 
-pages = [ask_fitGPT, settings]
+pages = [ask_fitGPT, settings, logout_page]
 
 if st.session_state.login_status == "Logged In":
   pg = st.navigation(pages)
