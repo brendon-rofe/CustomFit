@@ -13,6 +13,16 @@ def login():
 	username = st.text_input("Username")
 	password = st.text_input("Password")
 
+	if username == "":
+		st.warning("Please enter your username")
+	elif username != correct_username:
+		st.error("Incorrect username")
+
+	if password == "":
+		st.warning("Please enter your password")
+	elif password != correct_password:
+		st.error("Incorrect password")
+
 	if st.button("Log in") and username == correct_username and password == correct_password:
 		st.session_state.logged_in = True
 		st.rerun()
