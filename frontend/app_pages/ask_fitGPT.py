@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 
+st.header("Ask FitGPT")
+
 prompt = st.text_area("Enter your fitness question")
 
 if st.button("Ask"):
