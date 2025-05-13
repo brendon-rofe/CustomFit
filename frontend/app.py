@@ -17,8 +17,8 @@ def login():
 		st.session_state.login_status = "Logged In"
 		st.rerun()
 
-ask_fitGPT = st.Page("app_pages/ask_fitGPT.py", title="Ask FitGPT")
-settings = st.Page("app_pages/settings.py")
+ask_fitGPT = st.Page("app_pages/ask_fitGPT.py", title="Ask FitGPT", icon=":material/help:")
+settings = st.Page("app_pages/settings.py", icon=":material/settings:")
 
 pages = [ask_fitGPT, settings]
 
