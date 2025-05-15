@@ -30,7 +30,8 @@ def calculate_calories(data: CalorieCalculationRequest):
     f"Please calculate and return to me the daily calorie needs for someone with the following criteria: "
     f"{data.gender}, {data.age} years old, {data.height}cm tall, {data.weight}kg. "
     f"Return the answer in raw JSON using this structure: "
-    f'{{"calories": number, "protein_g": number, "carbs_g": number, "fat_g": number}}.'
+    f'{{"calories": number, "protein": number, "carbs": number, "fat": number}}.'
+    f"Remember that protein, carbs and fat are in grams."
   )
   response = model.generate_content(prompt)
   raw_text = response.text
