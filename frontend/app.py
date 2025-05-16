@@ -33,9 +33,10 @@ def logout():
 
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 ask_fitGPT = st.Page("app_pages/ask_fitGPT.py", title="Ask FitGPT", icon=":material/help:")
+calorie_calculator = st.Page("app_pages/calorie_calculator.py", title="Calorie Calculator", icon=":material/calculate:")
 settings = st.Page("app_pages/settings.py", icon=":material/settings:")
 
-pages = [ask_fitGPT, settings, logout_page]
+pages = [ask_fitGPT, calorie_calculator, settings, logout_page,]
 
 if st.session_state.logged_in == True:
   pg = st.navigation(pages)
