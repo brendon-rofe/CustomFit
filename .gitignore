@@ -17,6 +17,7 @@ etc/
 share/
 .eggs/
 lib/
+Include/
 bin/
 Scripts/
 pyvenv.cfg
